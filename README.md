@@ -75,12 +75,12 @@ Each record represents a single borrow action.
 - **Database Name:** `libraryStore`
 
 ### Setup Steps:
-CREATE DATABASE library;
-USE library;
+- CREATE DATABASE library;
+- USE library;
 
 ## 🧑‍💻 Getting Started
-Clone the repository.
-Set up your database (library) in MySQL.
-Update DB credentials in application.properties.
-Run the Spring Boot application.
-Access the proejct via your browser at http://localhost:8082.
+- Clone the repository.
+- Set up your database (library) in MySQL.
+- Update DB credentials in application.properties.
+- Run the Spring Boot application.
+- Access the proejct via your browser at http://localhost:8082.
