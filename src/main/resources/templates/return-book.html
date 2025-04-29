@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Return a Book</title>
+	<link rel="stylesheet" href="/css/style.css"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+			background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zMDktYWV3LTAxM18xXzEuanBn.jpg");
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 28px;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .back-btn {
+            background-color: #f44336;
+            margin-top: 10px;
+            width: auto;
+            padding: 10px 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .back-btn:hover {
+            background-color: #e41e1e;
+        }
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+
+	<div class="container">
+	       <h1>📦 Return a Book</h1>
+
+		   <form th:action="@{/manage/returnBook}" method="post" th:object="${borrow}">
+		       <label for="returnPid">Patron ID:</label>
+		       <input type="number" id="returnPid" name="patron.pid"
+		              th:value="${borrow.patron != null && borrow.patron.pid != 0} ? ${borrow.patron.pid} : ''"
+		              placeholder="Enter Patron ID"
+		              required><br>
+
+		       <label for="returnBookId">Book ID:</label>
+		       <input type="number" id="returnBookId" name="book.bookId"
+		              th:value="${borrow.book != null && borrow.book.bookId != 0} ? ${borrow.book.bookId} : ''"
+		              placeholder="Enter Book ID"
+		              required><br>
+
+		       <button type="submit">Return Book</button>
+		   </form>
+	       <div class="message" th:if="${message}" th:text="${message}" style="color: green; font-weight: bold;"></div>
+
+	       <hr>
+	       <button class="back-btn" onclick="window.location.href='/manage'">Back to Menu</button>
+	   </div>
+</body>	   
+</html>

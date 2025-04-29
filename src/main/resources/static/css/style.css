@@ -1,0 +1,22 @@
+body {
+	background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zMDktYWV3LTAxM18xXzEuanBn.jpg");
+}
+
+.back-btn {
+    background-color: #f44336;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    display: inline-block; /* Change from block to inline-block */
+    margin: 10px auto;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Optional hover effect */
+.back-btn:hover {
+    background-color: #d32f2f;
+}
